@@ -8,8 +8,8 @@ def home_view(request):
 
 
 def shop_view(request):
-    return HttpResponse("страница категории")
+    return render(request, "pages/shop.html")
 
 
 def product_detail(request, slug):
-    return HttpResponse("Страница продукта")
+    return render(request, "pages/product_detail.html")
