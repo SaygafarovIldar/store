@@ -6,7 +6,7 @@
         {% if product.product_type %}
         <div class="badge text-white bg-{{ product.get_class_by_type }}">{{ product.product_type }}</div>
         {% endif %}
-        <a class="d-block" href="detail.html">
+        <a class="d-block" href="{{ product.get_absolute_url }}">
             <img class="img-fluid w-100" src="{{ product.get_first_photo }}" alt="...">
         </a>
         <div class="product-overlay">
@@ -22,7 +22,7 @@
             </ul>
         </div>
     </div>
-    <h6><a class="reset-anchor" href="detail.html">{{ product.title }}</a></h6>
+    <h6><a class="reset-anchor" href="{{ product.get_absolute_url }}">{{ product.title }}</a></h6>
     <p class="small text-muted">${{ product.price }}</p>
 </div>
 

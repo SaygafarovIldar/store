@@ -31,4 +31,10 @@ def subcategory_products_view(request, slug):
 
 
 def product_detail(request, slug):
-    return render(request, "pages/product_detail.html")
+    product = Product.objects.get(slug=slug)
+    related_products = Product.objects.filter(category=product.category)
+    context = {
+        "product_detail": product,
+        "related_products": related_products
+    }
+    return render(request, "pages/product_detail.html", context)
